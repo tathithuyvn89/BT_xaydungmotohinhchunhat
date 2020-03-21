@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo lớp mô tả hình chữ nhật</title>
+</head>
+
+<body>
+<canvas id="myCanvas" width="300" height="150" style="border:1px solid #d3d3d3;">
+    Your browser does not support the HTML5 canvas tag.</canvas>
+    <script>
+         function Rectangle (x,y,chieuRong,chieuDai) {
+             this.x=x;
+             this.y=y;
+            this.chieuRong =chieuRong;
+            this.chieuDai = chieuDai;
+
+            this.getArea= function () {
+                return this.chieuRong*this.chieuDai;
+            }
+            this.getChuVi= function () {
+                return (this.chieuRong+this.chieuDai)*2;
+            }
+        }
+         let rectangle= new Rectangle(1,1,2,5);
+         console.log(rectangle.getArea());
+         console.log(rectangle.getChuVi());
+
+         function createRectangle() {
+             var ctx= document.getElementById("myCanvas").getContext("2d");
+
+             ctx.beginPath();
+             ctx.rect(30,50,150,80);
+             ctx.lineWidth="8";
+             ctx.strokeStyle="red";
+             ctx.stroke();
+         }
+         createRectangle();
+
+
+    </script>
+</body>
+</html>
